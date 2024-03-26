@@ -1,16 +1,18 @@
 CC = gcc
-CF = -Wall -Werror -Wpedantic -Wextra
+CFLAGS = -Wall -Werror -Wpedantic -Wextra -Wconversion
 
-EXEC = tdlist
+TARGET = tdlist
+
+.PHONY: clean install uninstall
 
 all:
-	$(CC) $(CF) -o $(EXEC) tdlist.c
+	$(CC) $(CFLAGS) -o $(TARGET) tdlist.c
 
 clean:
-	rm -f $(EXEC) *.o
+	rm -f $(TARGET) *.o
 
 install: all
-	sudo cp $(EXEC) /bin/
+	sudo cp $(TARGET) /bin/
 
-unistall: clean
-	sudo rm -f /bin/$(EXEC)
+uninstall: clean
+	sudo rm -f /bin/$(TARGET)
