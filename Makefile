@@ -3,7 +3,7 @@ CFLAGS = -Wall -Werror -Wpedantic -Wextra -Wconversion
 
 TARGET = tdlist
 
-.PHONY: clean install uninstall
+.PHONY: clean install uninstall check
 
 all:
 	$(CC) $(CFLAGS) -o $(TARGET) tdlist.c
@@ -16,3 +16,6 @@ install: all
 
 uninstall: clean
 	sudo rm -f /bin/$(TARGET)
+
+check:
+	./check.sh
