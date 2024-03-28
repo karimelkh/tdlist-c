@@ -3,8 +3,6 @@ CFLAGS = -Wall -Werror -Wpedantic -Wextra -Wconversion
 
 TARGET = tdlist
 
-.PHONY: clean install uninstall check
-
 all:
 	$(CC) $(CFLAGS) -o $(TARGET) tdlist.c
 
@@ -19,3 +17,5 @@ uninstall: clean
 
 check:
 	./check.sh
+
+.PHONY: clean install uninstall check
