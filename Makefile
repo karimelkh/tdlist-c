@@ -1,13 +1,14 @@
 CC = gcc
 CFLAGS = -Wall -Werror -Wpedantic -Wextra -Wconversion
-
+SRC = src
+BLD = build
 TARGET = tdlist
 
 all:
-	$(CC) $(CFLAGS) -o $(TARGET) tdlist.c
+	$(CC) $(CFLAGS) -o $(BLD)/$(TARGET) $(SRC)/tdlist.c
 
 clean:
-	rm -f $(TARGET) *.o
+	rm -f $(BLD)/*
 
 install: all
 	sudo cp $(TARGET) /bin/
